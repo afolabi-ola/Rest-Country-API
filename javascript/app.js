@@ -7,6 +7,22 @@ const alertError = (para) => {
   alert(para);
 };
 
+
+const getLanguage = (para) => {
+  const [par1, par2] = Object.entries(para);
+  const [key1, value1] = par2 ? par2 : par1;
+  return value1;
+};
+
+const getCurrency = (para) => {
+  const [cur] = Object.entries(para);
+  return cur[1].name;
+};
+const getCurrencySymbol = (para) => {
+  const [cur] = Object.entries(para);
+  return cur[1].symbol;
+};
+
 const mapData = (country) => {
   return `
  
@@ -31,13 +47,12 @@ const mapData = (country) => {
                       >Currency:
                       <span class="currency"
                         >${
-                          ""
-                          //                       country.currencies
-                          //                         ? getCurrency(country.currencies)
-                          //                         : "None"
-                          //                     } <span class="cur-symbol">(${
-                          // country.currencies ? getCurrencySymbol(country.currencies) : "None"
-                        }) </span></span
+                          country.currencies
+                            ? getCurrency(country.currencies)
+                            : "None"
+                        } <span class="cur-symbol">(${
+    country.currencies ? getCurrencySymbol(country.currencies) : "None"
+  }) </span></span
                       ></label
                     >
                   </div>
@@ -60,10 +75,9 @@ const mapData = (country) => {
                   <div class="label">
                     <label for="language"
                       >Languages: <span class="language">${
-                        ""
-                        // country.languages
-                        //   ? getLanguage(country.languages)
-                        //   : "None"
+                        country.languages
+                          ? getLanguage(country.languages)
+                          : "None"
                       }</span></label
                     >
                   </div>
