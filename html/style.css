@@ -60,3 +60,26 @@ a {
   color: aliceblue;
 
 }
+
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+#search {
+  padding: 10px;
+  background: transparent;
+  color: aliceblue;
+  font-size: 25px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+}
+.form-wrap {
+  text-align: center;
+}

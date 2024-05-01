@@ -109,6 +109,8 @@ const getCountries = async () => {
   }
 };
 
+const searchInput = document.querySelector("#search");
+
 window.addEventListener("DOMContentLoaded", () => {
   getCountries();
 });
