@@ -111,6 +111,36 @@ const getCountries = async () => {
 
 const searchInput = document.querySelector("#search");
 
+searchInput.addEventListener("input", (event) => {
+  const userSearchString = searchInput.value;
+  if (userSearchString !== "") {
+    const userSearch =
+      userSearchString.split("")[0].toUpperCase() +
+      userSearchString.toLowerCase().slice(1);
+
+    const sent = fetch(url)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        const countrySearch = data.filter((dat) =>
+          dat.name.common.includes(userSearch)
+        );
+        return countrySearch;
+      })
+      .then((foundCountry) => {
+        if (foundCountry.length === 0) {
+          cont.innerHTML = "<h2>No matching countries found.</h2>";
+        } else {
+          const foundMap = foundCountry.map(mapData);
+          cont.innerHTML = foundMap.join("");
+        }
+      });
+  } else {
+    getCountries();
+  }
+});
+
 window.addEventListener("DOMContentLoaded", () => {
   getCountries();
 });
