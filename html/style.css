@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgba(0, 0, 0, 0.616);
+  color: white;
+}
+
+.container {
+  width: 100%;
+}
+.countries {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.country-wrap {
+  width: 250px;
+  border: 1px solid rgb(139, 139, 139);
+  border-radius: 10px;
+  background-color: rgba(3, 3, 3, 0.658);
+  margin: 10px;
+  box-shadow: -2px -2px 4px rgb(66, 66, 66), 2px 2px 4px rgb(83, 83, 83);
+}
+.flag-img {
+  width: 100%;
+}
+
+#flag {
+  width: 100%;
+  border-radius: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.text {
+  padding: 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+li {
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+}
+.name {
+  margin-bottom: 10px;
+}
+.label {
+  margin-bottom: 10px;
+}
+a {
+  text-decoration: none;
+  color: aliceblue;
+
+}
